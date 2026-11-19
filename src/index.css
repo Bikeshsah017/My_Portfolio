@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans bg-[#0A0A0F] text-[#F5F5F7] transition-colors duration-300;
+  }
+
+  /* Light mode override */
+  html:not(.dark) body {
+    @apply bg-[#FAFAFC] text-[#0F172A];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0A0F;
+}
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #272738;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366F1;
+}
+
+/* Premium Card & Glassmorphism */
+.premium-card {
+  background-color: #12121A;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 16px 36px -12px rgba(99, 102, 241, 0.2);
+}
+
+html:not(.dark) .premium-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+html:not(.dark) .premium-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 16px 36px -10px rgba(99, 102, 241, 0.12);
+}
+
+/* Glassmorphism for Navbar */
+.glass-nav {
+  background: rgba(10, 10, 15, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+html:not(.dark) .glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Gradient Highlights */
+.gradient-accent {
+  background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #818CF8 0%, #6366F1 40%, #22D3EE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Linear/Stripe Subtle Grid */
+.bg-subtle-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+html:not(.dark) .bg-subtle-grid {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
